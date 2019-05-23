@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+
+    <%= favicon_link_tag 'fav.ico' %>
+    <title>eBRS - HQ</title>
+    <%= stylesheet_link_tag "bootstrap/bootstrap" %>
+    <%= stylesheet_link_tag "extras/font-awesome.min" %>
+    <%= stylesheet_link_tag "extras/style" %>                                         
+    <%= stylesheet_link_tag "extras/style-responsive" %>                                         
+
+  </head>
+
+  <body>
+
+      <!-- **********************************************************************************************************************************************************
+      MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+
+	  <div id="login-page">
+	  	<div class="container">
+	        <form class="form-login" method="post" accept-charset="UTF-8" action="/login" autocomplete="off" enctype="multipart/form-data">
+		        <h2 class="form-login-heading">electronic birth registration</h2>
+		        <div class="login-wrap">
+                <%= text_field(:user, :username, :placeholder => "username", :autocomplete=> "off", :class => 'form-control') %>
+		            <br>
+                <%= password_field(:user, :password, :placeholder => "password", :autocomplete=> "off", :class => 'form-control', :tabindex => 2) %>
+		            <label class="checkbox">
+
+		            </label>
+		            <button style='background: #006f95' class="btn btn-theme btn-block" href="index.html" type="submit"><i class="fa fa-lock"></i> SIGN IN</button>
+
+		        </div>
+		
+		          <!-- Modal -->
+		          <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
+		              <div class="modal-dialog">
+		                  <div class="modal-content">
+		                      <div class="modal-header">
+		                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		                          <h4 class="modal-title">Forgot Password ?</h4>
+		                      </div>
+		                      <div class="modal-body">
+		                          <p>Enter your e-mail address below to reset your password.</p>
+		                          <input type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix">
+		
+		                      </div>
+		                      <div class="modal-footer">
+		                          <button data-dismiss="modal" class="btn btn-default" type="button">Cancel</button>
+		                          <button class="btn btn-theme" type="button">Submit</button>
+		                      </div>
+		                  </div>
+		              </div>
+		          </div>
+
+		      </form>	  	
+	  	
+	  	</div>
+	  </div>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+    <%=javascript_include_tag "js/jquery"%>                                         
+    <%=javascript_include_tag "bootstrap/bootstrap.min"%>                                         
+
+    <!--BACKSTRETCH-->
+    <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
+    <%=javascript_include_tag "js/jquery.backstretch.min"%>                                         
+    <script>
+        $.backstretch("/assets/bg-1.jpg", {speed: 500});
+    </script>
+
+
+  </body>
+</html>
